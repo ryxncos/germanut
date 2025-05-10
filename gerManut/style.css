@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto';
+}
+body {
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    
+}
+.logo img {    
+    height:200px;
+}
+.headerStsAt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.voltar{
+    text-align: left;
+}
+.titulo {
+    text-align: center;
+}
+
+.contentStsAt{
+    background-color: #e9ecef;
+}
+.impsArea img{
+    height: 70px;
+}
+.impsArea{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid pink;
+}
+
+.slEtiArea{
+    width: 400px;
+    padding: 10px;
+    border: 1px solid black;   
+    gap: 15px;
+    
+}
+
+.tscAreaSlEti{
+    font-family: 'Roboto', sans-serif;
+    gap: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ztAreaSlEti{
+    gap: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.embSecArea{
+    width: 400px;
+    padding: 10px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+}
+.rejQr{
+    gap: 15px;
+    display: flex;
+}
