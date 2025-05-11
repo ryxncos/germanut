@@ -6,42 +6,119 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
-body {
-    
+.hidden {
+    display: none;
+}
+button {
+    color: white;
+    padding: 8px 22px;
+    background-color: #1E1F7C;
+    transition: all 0.2s;
+    border-radius: 6px; 
+}
+button:hover {
+    transition-duration: 0.5s;
+    background-color: rgb(18, 0, 107);
+}
+button:active{
+    transform: scale(0.96);
+}
+a {
+    color: white;
+    text-decoration: none;
 }
 .logo img {    
     height:200px;
 }
-.headerStsAt{
+
+.titulo {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+/* --------------- LOGIN ---------------*/
+.login{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+}
+.contentIndex{
+    padding: 10px;
+    width: 500px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 10);
+}
+.formsIndex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: bold;
+}
+.formsIndex input{
+    border: 1px solid black;
+    padding-left:2px ;
+}
+.submitDIV{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.voltar{
-    text-align: left;
+#enviarLogin{
+    color: white;
+    padding: 8px 22px;
+    background-color: #1E1F7C;
+    transition: all 0.2s;
+    border-radius: 6px;
 }
-.titulo {
+/* --------------- STATUS ATUAL --------------- */
+.headerStsAt{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    color: white;
     text-align: center;
+    background-color: #1E1F7C;
+    width: 100vw;
 }
 
+.headerStsAt p{
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+}
 .contentStsAt{
-    background-color: #e9ecef;
+    padding: 10px;
+    margin: 0 auto;
+    width: 750px;
+    border-radius: 5px;
 }
 .impsArea img{
-    height: 70px;
+    height: 60px;
 }
 .impsArea{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 10px solid pink;
+    border-radius: 30px;
+    gap: 20px;
+}
+.impsArea div{
+    border-radius: 10px;
+    background-color: #f8f9fa;
 }
 
 .slEtiArea{
     width: 400px;
     padding: 10px;
-    border: 1px solid black;   
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 8);
     gap: 15px;
     
 }
@@ -65,7 +142,7 @@ body {
 .embSecArea{
     width: 400px;
     padding: 10px;
-    border: 1px solid black;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 10);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,4 +153,91 @@ body {
 .rejQr{
     gap: 15px;
     display: flex;
+}
+.abateArea{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 10);
+    width: 400px;
+    padding: 10px;
+    gap: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.impAbt{
+    display: flex;
+}
+.impAbt div {
+    width: 100px;
+}
+.ztCouros{
+    margin-left: 5px;
+}
+.expedArea{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 10);
+    width: 400px;
+    padding: 10px;
+    gap: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.impExp{
+    display: flex;
+}
+.impExp div{
+    width: 100px;
+}
+.miudosArea{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 10);
+    width: 400px;
+    padding: 10px;
+    gap: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.impMiudos{
+    display: flex;
+}
+.impMiudos div{
+    width: 100px;
+}
+.footerStsAt{
+    padding: 10px;
+    background-color: #1E1F7C;
+    color: white;
+}
+/* --------------- MAIN MENU -------------- */
+.headerMainMenu{
+    padding: 10px;
+    background-color: #1E1F7C;
+}
+.contentMainMenu select{
+    text-align: center;
+    padding: 2px;
+    
+}
+.contentMainMenu{
+    background-color: #f8f9fa;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.formulariosCad{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footerMainMenu{
+    padding: 10px;
+    background-color: #1E1F7C;
 }
