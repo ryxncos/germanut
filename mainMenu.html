@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="frontMainMenu">
+        <div class="headerMainMenu"></div>
+        <div class="contentMainMenu">
+            <div class="selecSetores">
+                <!-- SELEÇÃO DE SETORES -->
+                <label for="mudsetor">Escolha o setor</label> <br>
+                <select id="mudSetor" onchange="mostrarSetores();mostrarConfiguracoes(); mostrarForms()">
+                <option value="">Seleciona Setor</option>
+                <option value="desossa">Desossa</option>
+                <option value="abate">Abate</option>
+                <option value="expedPlt">Expedição/Paletização</option>
+                <option value="miudos">Miúdos</option>
+              </select>
+            
+              <div id="desCase" class="hidden">
+                <label for="impDesConf">Selecione a impressora</label> <br>
+                <select id="impDesConf" onchange="mostrarConfiguracoes(); mostrarForms()">
+                  <option value="">Seleciona impressora</option>
+                  <option value="tsc1729">TSC 1729</option>
+                  <option value="tsc748">TSC 748</option>
+                  <option value="tsc934">TSC 934</option>
+                  <option value="tsc924">TSC 924</option>
+                  <option value="ztCromo">ZT CROMO</option>
+                  <option value="ztAdv">ZT ADESIVO</option>
+                  <option value="ze500">PESAGEM AUT.</option>
+                  <option value="ztQrCode">QR CODE</option>
+                  <option value="ztRejeito">REJEITO</option>
+                </select>
+              </div>
+            
+              <div id="abtCase" class="hidden">
+                <label for="impAbtConf">Selecione a impressora</label> <br>
+                <select id="impAbtConf" onchange="mostrarConfiguracoes(); mostrarForms()">
+                    <option value="">Seleciona impressora</option>
+                    <option value="tscRastreabilidade">RASTREABILIDADE</option>
+                    <option value="ztCouros">COUROS</option>
+                    <option value="ztMC">MEIA CARCAÇA</option>
+                    <option value="ztBlc">SL. BALANÇA</option>
+                </select>
+              </div>
+              <div id="expdCase" class="hidden">
+                <label for="impExpConf">Selecione a impressora</label> <br>
+                <select id="impExpConf" onchange="mostrarConfiguracoes(); mostrarForms()">
+                    <option value="">Seleciona impressora</option>
+                    <option value="ztQrcodeExp">QR CODE</option>
+                    <option value="ztXXX">XXX</option>
+                </select>
+              </div>
+              <div id="miudosCase" class="hidden">
+                <label for="impMiuConf">Selecione a impressora</label> <br>
+                <select id="impMiuConf" onchange="mostrarConfiguracoes(); mostrarForms()">
+                    <option value="">Seleciona impressora</option>
+                    <option value="tscSlIsd">Sala ADM</option>
+                    <option value="ztBlcMiu">BALANÇA</option>
+                </select>
+              </div>
+
+            </div>
+            <div class="selecConfig">
+                <!-- ABA DE CONFIGURAÇÕES  -->
+                  <div id="configPsgAut" class="hidden">
+                    <label for="configuracaoPsgAut">Configurações da impressora</label> <br>
+                    <select id="configuracaoPsgAut" onchange="mostrarForms()">
+                        <option value=""></option>
+                        <option value="cbcImpPsg">Cabeça de Impressão </option>
+                        <option value="correiaMPsg">Correia Menor</option>
+                        <option value="correiaGPsg">Correia Maior</option>
+                        <option value="barraDstPSG">Barra Destacadora</option>
+                        <option value="recartilhado">Recartilhado</option>
+                        <option value="roletePsg">Rolete</option>
+                        
+                    </select>
+                  </div>
+                  <div id="configTsc" class="hidden">
+                    <label for="configuracaoTsc">Configurações da impressora</label> <br>
+                    <select id="configuracaoTsc"  onchange="mostrarForms()">
+                        <option value="">Selecione a configuração</option>
+                        <option value="cortador">Cortador</option>
+                        <option value="roleteTsc">Rolete</option>
+                        <option value="cbcImpTsc">Cabeça de Impressão</option>
+                    </select>
+                  </div>
+                  <div id="configZt" class="hidden">
+                    <label for="configuracaoZT">Configurações da impressora</label> <br>
+                    <select id="configuracaoZT" onchange="mostrarForms()">
+                        <option value="">Selecione a configuração</option>
+                        <option value="cbcImpZt">Cabeça de Impressão</option>
+                        <option value="roleteZT">Rolete</option>
+                        <option value="correiaZT">Correia</option>
+                    </select>
+                  </div>
+
+            </div>
+            <br><br>
+            <div class="formulariosCad">
+                <div id="formsCortador" class="hidden">
+                  <div class="partEsquerda">
+                      <h2>Faça aqui seu registro do cortador</h2>
+                      <form action="processaCad.php" method="POST">
+                          <label id="labelImpressora" for="impDesConf">Selecione a impressora:</label> <br> <br> 
+                          <label for="snAntigo" id="snAntigoLabel">S/N Antigo</label>
+                          <input type="text" name="snAntigo" id="snAntigoInput">
+                          <label for="datRetirada">Data da Reirada</label>
+                          <input type="datetime-local" name="datRetirada", id="dataRetirada">
+                          <br>
+                          <br>
+                          <label for="snNovo">S/N Novo</label>
+                          <input type="text" name="snNovo" id="snNovo">
+                          <label for="">Data instalação</label>
+                          <input type="datetime-local" name="datInstalacao" id="dataInstalacao"><br><br>
+                          
+                          <br><br>
+                          <label for="desc">Desc. Serviço</label>
+                          <br>
+                          <textarea name="desc" id="descservice" cols="30" rows="4"></textarea>
+                          <br>
+                          <br>
+                          <label for="obs">Obs.</label>
+                          <input type="text" name="obs" id="obs"> <br>
+                          <label for="analista">Analista</label>
+                          <input type="text" name="analista" id="analistaNome"> <br> <br>
+      
+                          <input type="submit" name="submit" id="submitCadastro" value="Enviar">
+                      </form>
+                    </div>
+
+                </div>
+                <div id="formsCbcImp" class="hidden">
+                    <form action="">
+                        <label for="snAntigo" id="snAntigoLabel">S/N Antigo</label>
+                          <input type="text" name="snAntigo" id="snAntigoInput">
+                          <label for="datRetirada">Data da Reirada</label>
+                          <input type="datetime-local" name="datRetirada", id="dataRetirada">
+                          <br>
+                          <br>
+                          <label for="snNovo">S/N Novo</label>
+                          <input type="text" name="snNovo" id="snNovo">
+                          <label for="">Data instalação</label>
+                          <input type="datetime-local" name="datInstalacao" id="dataInstalacao"><br><br>
+                          
+                          <input type="submit" name="submit" id="submitCadastro" value="Enviar">
+                    </form> 
+                </div>
+
+                <div id="formCbcImpZeZE" class="hidden">
+                    <form action="">
+                        <h1>CABEÇA IMPRESSÃO</h1>
+                        <label for="snAntigo" id="snAntigoLabel">S/N Antigo</label>
+                          <input type="text" name="snAntigo" id="snAntigoInput">
+                          <label for="datRetirada">Data da Reirada</label>
+                          <input type="datetime-local" name="datRetirada", id="dataRetirada">
+                          <br>
+                          <br>
+                          <label for="snNovo">S/N Novo</label>
+                          <input type="text" name="snNovo" id="snNovo">
+                          <label for="">Data instalação</label>
+                          <input type="datetime-local" name="datInstalacao" id="dataInstalacao"><br><br>
+                          
+                          <input type="submit" name="submit" id="submitCadastro" value="Enviar">
+                    </form>
+                </div>
+                <div id="formCorreiaMZE" class="hidden">
+                    <form action="">
+                        <h1>CORREIA MENOR</h1>
+                        <label for="snAntigo" id="snAntigoLabel">S/N Antigo</label>
+                          <input type="text" name="snAntigo" id="snAntigoInput">
+                          <label for="datRetirada">Data da Reirada</label>
+                          <input type="datetime-local" name="datRetirada", id="dataRetirada">
+                          <br>
+                          <br>
+                          <label for="snNovo">S/N Novo</label>
+                          <input type="text" name="snNovo" id="snNovo">
+                          <label for="">Data instalação</label>
+                          <input type="datetime-local" name="datInstalacao" id="dataInstalacao"><br><br>
+                          
+                          <input type="submit" name="submit" id="submitCadastro" value="Enviar">
+                    </form>
+                </div>
+                <div id="formCorreiaGZE" class="hidden">
+                    <form action="">
+                        <label for="snAntigo" id="snAntigoLabel">S/N Antigo</label>
+                          <input type="text" name="snAntigo" id="snAntigoInput">
+                          <label for="datRetirada">Data da Reirada</label>
+                          <input type="datetime-local" name="datRetirada", id="dataRetirada">
+                          <br>
+                          <br>
+                          <label for="snNovo">S/N Novo</label>
+                          <input type="text" name="snNovo" id="snNovo">
+                          <label for="">Data instalação</label>
+                          <input type="datetime-local" name="datInstalacao" id="dataInstalacao"><br><br>
+                          
+                          <input type="submit" name="submit" id="submitCadastro" value="Enviar">
+                    </form>
+                </div>
+                <div id="formBrrDstcZE" class="hidden">
+                    <form action="">
+                        <label for="snAntigo" id="snAntigoLabel">S/N Antigo</label>
+                          <input type="text" name="snAntigo" id="snAntigoInput">
+                          <label for="datRetirada">Data da Reirada</label>
+                          <input type="datetime-local" name="datRetirada", id="dataRetirada">
+                          <br>
+                          <br>
+                          <label for="snNovo">S/N Novo</label>
+                          <input type="text" name="snNovo" id="snNovo">
+                          <label for="">Data instalação</label>
+                          <input type="datetime-local" name="datInstalacao" id="dataInstalacao"><br><br>
+                          
+                          <input type="submit" name="submit" id="submitCadastro" value="Enviar">
+                    </form>
+                </div>
+                <div id="formRcthZE" class="hidden">
+                    <form action="">
+                        <label for="snAntigo" id="snAntigoLabel">S/N Antigo</label>
+                          <input type="text" name="snAntigo" id="snAntigoInput">
+                          <label for="datRetirada">Data da Reirada</label>
+                          <input type="datetime-local" name="datRetirada", id="dataRetirada">
+                          <br>
+                          <br>
+                          <label for="snNovo">S/N Novo</label>
+                          <input type="text" name="snNovo" id="snNovo">
+                          <label for="">Data instalação</label>
+                          <input type="datetime-local" name="datInstalacao" id="dataInstalacao"><br><br>
+                          
+                          <input type="submit" name="submit" id="submitCadastro" value="Enviar">
+                    </form>
+                </div>
+                <div id="formRoleteZE" class="hidden">
+                    <form action="">
+                        <label for="snAntigo" id="snAntigoLabel">S/N Antigo</label>
+                          <input type="text" name="snAntigo" id="snAntigoInput">
+                          <label for="datRetirada">Data da Reirada</label>
+                          <input type="datetime-local" name="datRetirada", id="dataRetirada">
+                          <br>
+                          <br>
+                          <label for="snNovo">S/N Novo</label>
+                          <input type="text" name="snNovo" id="snNovo">
+                          <label for="">Data instalação</label>
+                          <input type="datetime-local" name="datInstalacao" id="dataInstalacao"><br><br>
+                          
+                          <input type="submit" name="submit" id="submitCadastro" value="Enviar">
+                    </form>
+                </div>
+                <div id="formsRolete" class="hidden">
+                  <form action="">
+                    
+                      <label for="snAntigo" id="snAntigoLabel">S/N Antigo</label>
+                        <input type="text" name="snAntigo" id="snAntigoInput">
+                        <label for="datRetirada">Data da Reirada</label>
+                        <input type="datetime-local" name="datRetirada", id="dataRetirada">
+                        <br>
+                        <br>
+                        <label for="snNovo">S/N Novo</label>
+                        <input type="text" name="snNovo" id="snNovo">
+                        <label for="">Data instalação</label>
+                        <input type="datetime-local" name="datInstalacao" id="dataInstalacao"><br><br>
+                        
+                        <input type="submit" name="submit" id="submitCadastro" value="Enviar">
+                  </form>
+              </div>
+            </div>
+
+            <div class="partDireita">
+                <img src="img/logo-branco-novo-jbs.png" alt="">
+
+
+          </div>
+        </div>
+
+        </div>
+        <div class="footerMainMenu"></div>
+    </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
